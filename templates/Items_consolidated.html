@@ -230,6 +230,9 @@ function showMessage() {
         form.submit();
 		alert("Entry/s will be deleted.");
 }
+function printReport() {
+  window.print();
+}
 </script>
 </head>
 <body>
@@ -270,6 +273,11 @@ function showMessage() {
 <table>
 <tr>
     <td><button class="button" onclick='showMessage();'><span>Submit</span></button></td>
+</tr>
+<tr>
+    <td><button class='button' onclick="printReport()">Print Report</button></td>
+</tr>
+<tr>
     <td><button class="button" onclick="location.href='https://lostandfoundorchids.shrinandhanbk.repl.co/'"><span>Go Home</span></button></td>
 </tr>
 </table>
