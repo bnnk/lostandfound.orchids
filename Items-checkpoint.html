@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Orchids Internation Lost and Found Items</title>
+	<style type="text/css">
+     body {
+      background: rgb(153, 0, 0);
+    }
+	th:tr{ 
+		color: blue; 
+
+	} 
+	tr:nth-of-type(2n){ 
+		border: 1px solid black; 
+		background-color: aqua; 
+
+	} 
+
+	td{ 
+		padding: 8px 8px; 
+		background-color: 1px solid blue; 
+		font-family: "Times New Roman";
+		font-style: italic;
+	}
+	</style> 
+    </head>
+<body>
+<center><img src = 'https://i.ibb.co/6Y5cqMS/pagicon.png'></img></center>
+<table>
+	<th> 
+		<tr style="color: green; ">	 
+		<td>S.NO</td> 
+		<td>Item Name</td>
+		<td>Item Count</td>	
+</tr> 
+	</th>
+{%for i in range(0, len)%} 
+<tr> 
+    <tr style='color: blue;font-style: italic;'>
+	<td>{{i}}</td> 
+    <td>{{list[i]}}</td> 	
+    <td>{{value[i]}}</td> 	
+</tr> 
+{%endfor%} 
+</table>
+<a href = 'http://127.0.0.1:6060'>Go Home</a> 
+</body>
+</html>
