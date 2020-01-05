@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <style>
+    body {
+      background: rgb(153, 0, 0);
+    }
+    </style>
+    <meta charset="UTF-8">
+    <title>{{h}}</title>
+<body>
+    <center><img src = 'https://i.ibb.co/6Y5cqMS/pagicon.png'></img></center>
+<table>
+{%for i in range(0, len)%} 
+<tr> 
+    <tr style='color: blue;font-style: italic;'>
+	<td>{{i}}</td> 
+    <td><button onclick='{{type[i]}}showMessage();'>{{list[i]}}</button></td> 	
+</tr> 
+{%endfor%}
+</table> 
+<script type = "text/javascript">
+{%for i in range(0, len)%} 
+function {{type[i]}}showMessage() {
+  var myvalue="{{chosen|safe}}{{list[i]}}";
+        var form = document.createElement('form');
+        form.method = 'POST';
+        form.action = "http://127.0.0.1:6060/{{page}}";
+        var input = document.createElement('input');
+        input.name = "choosen";
+        input.value = myvalue;
+        input.type = 'text';
+        form.appendChild(input)
+        document.body.appendChild(form);
+        form.submit();
+}   
+{%endfor%}
+</script>
+</body>
+</html>
